@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-rc
+  labels:
+    app: nginx
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginx
+          image: registry.cn-shanghai.aliyuncs.com/lian_ns/nginx:1.19.2
+          ports:
+            - containerPort: 80
+              name: port
+              protocol: TCP
+          volumeMounts:
+            - name: nginx-conf
+              mountPath: "/etc/nginx/conf.d"
+      volumes:
+        - name: nginx-conf
+          configMap:
+            name: nginx-conf
