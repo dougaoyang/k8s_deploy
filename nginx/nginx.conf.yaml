@@ -42,9 +42,8 @@ data:
   testphp.conf: |-
     server {
         listen 80;
-        server_name localhost;
+        server_name testphp.codeeper.com;
         index index.php;
-        access_log logs/fapiao.access.log;
         root /opt/www/test_php/;
 
         location / {
@@ -58,6 +57,6 @@ data:
             fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
             fastcgi_param SCRIPT_NAME $fastcgi_script_name;
             fastcgi_index index.php;
-            fastcgi_pass php-svc:9000;
+            fastcgi_pass testphp-svc:9000;
         }
     }
