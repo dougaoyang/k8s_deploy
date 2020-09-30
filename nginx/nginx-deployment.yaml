@@ -38,5 +38,5 @@ spec:
             name: nginx-vhost-conf
         - name: nginx-www
           hostPath:
-            path: /opt/www/k8s/brbt_master
+            path: /opt/www/brbt_master
 
