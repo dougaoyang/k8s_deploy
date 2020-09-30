@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: registry.cn-shanghai.aliyuncs.com/lian_ns/nginx:1.19.2
+          image: registry.cn-shanghai.aliyuncs.com/lian_ns/nginx:1.18
           ports:
             - containerPort: 80
               name: port
