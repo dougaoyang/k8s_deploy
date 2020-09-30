@@ -3,15 +3,6 @@ kind: ConfigMap
 metadata:
   name: nginx-vhost-conf
 data:
-  default.conf: |-
-    server {
-        listen       80;
-        server_name  _;
-        location / {
-            root   /usr/share/nginx/html;
-            index  index.html index.htm;
-        }
-    }
   jenkins.conf: |-
     upstream jenkins {
         server 172.19.118.74:8888;
