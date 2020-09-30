@@ -26,14 +26,5 @@ data:
         gzip_comp_level 4;
         gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
 
-        server {
-            listen       80;
-            server_name  _;
-            location / {
-                root   /usr/share/nginx/html;
-                index  index.html index.htm;
-            }
-        }
-
         include /etc/nginx/conf.d/*.conf;
     }
