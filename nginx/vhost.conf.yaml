@@ -29,6 +29,12 @@ data:
       server_name run.codeeper.com;
       charset     utf-8;
 
+      location ~ ^/h5 {
+        root /var/www/brbt_h5;
+        index index.html;
+        try_files $uri $uri/ /h5/index.html;
+      }
+
       location ~ ^/master {
         root /var/www/brbt_master;
         index index.html;
