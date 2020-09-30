@@ -23,3 +23,15 @@ data:
             proxy_set_header X-Forwarded-Proto $scheme;
         }
     }
+  brbt.conf: |-
+    server {
+      listen      80;
+      server_name run.codeeper.com;
+      charset     utf-8;
+
+      location ~ ^/master {
+        root /var/www/brbt_master;
+        index index.html;
+        try_files $uri $uri/ /master/index.html;
+      }
+    }

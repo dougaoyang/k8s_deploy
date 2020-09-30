@@ -13,3 +13,10 @@ spec:
         backend:
           serviceName: nginx-svc
           servicePort: 80
+  - host: run.codeeper.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: nginx-svc
+          servicePort: 80

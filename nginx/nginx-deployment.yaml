@@ -27,6 +27,8 @@ spec:
               subPath: nginx.conf
             - name: nginx-vhost-conf
               mountPath: "/etc/nginx/conf.d/"
+            - name: nginx-www
+              mountPath: /var/www/brbt_master
       volumes:
         - name: nginx-conf
           configMap:
@@ -34,4 +36,7 @@ spec:
         - name: nginx-vhost-conf
           configMap:
             name: nginx-vhost-conf
+        - name: nginx-www
+          hostPath:
+            path: /opt/www/k8s/brbt_master
 
