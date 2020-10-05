@@ -23,6 +23,17 @@ data:
             proxy_set_header X-Forwarded-Proto $scheme;
         }
     }
+  blog.conf: |-
+    server {
+      listen      80;
+      server_name www.codeeper.com codeeper.com;
+      charset     utf-8;
+
+      location / {
+        root   /var/www/blog;
+        index  index.html index.htm;
+      }
+    }
   brbt.conf: |-
     server {
       listen      80;
