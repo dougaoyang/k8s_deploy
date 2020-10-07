@@ -52,11 +52,11 @@ data:
         try_files $uri $uri/ /master/index.html;
       }
 
-      location ~ ^/static {
-        alias /var/www/brbt/static;
+      location /static/ {
+        alias /var/www/brbt/static/;
       }
 
-      location ~ ^/uploads {
-        alias /var/www/brbt/uploads;
+      location /uploads {
+        alias /var/www/brbt/uploads/;
       }
     }
