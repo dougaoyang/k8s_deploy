@@ -37,7 +37,7 @@ data:
   brbt.conf: |-
     server {
       listen      80;
-      server_name run.codeeper.com;
+      server_name brbt.codeeper.com;
       charset     utf-8;
 
       location ~ ^/h5 {
@@ -50,5 +50,13 @@ data:
         root /var/www/brbt_master;
         index index.html;
         try_files $uri $uri/ /master/index.html;
+      }
+
+      location ~ ^/static {
+        alias /var/www/brbt/static;
+      }
+
+      location ~ ^/uploads {
+        alias /var/www/brbt/uploads;
       }
     }
