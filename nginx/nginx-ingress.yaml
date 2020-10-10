@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: nginx-ing
+  annotations:
+    kubernetes.io/ingress.class: "nginx" 
+spec:
+  rules:
+  - host: test.codeeper.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: nginx-svc
+          servicePort: 80
