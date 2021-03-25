@@ -40,14 +40,18 @@ data:
       server_name brbt.codeeper.com;
       charset     utf-8;
 
+      location ~ ^/MP_verify {
+        root /var/www/brbt;
+      }
+ 
       location ~ ^/h5 {
-        root /var/www/brbt_h5;
+        root /var/www/brbt/html;
         index index.html;
         try_files $uri $uri/ /h5/index.html;
       }
 
       location ~ ^/master {
-        root /var/www/brbt_master;
+        root /var/www/brbt/html;
         index index.html;
         try_files $uri $uri/ /master/index.html;
       }
@@ -58,5 +62,35 @@ data:
 
       location /uploads {
         alias /var/www/brbt/uploads/;
+      }
+    }
+  brbt-dev.conf: |-
+    server {
+      listen      80;
+      server_name brbt-dev.codeeper.com;
+      charset     utf-8;
+
+      location ~ ^/MP_verify {
+        root /var/www/brbt-dev;
+      }
+
+      location ~ ^/h5 {
+        root /var/www/brbt-dev/html;
+        index index.html;
+        try_files $uri $uri/ /h5/index.html;
+      }
+
+      location ~ ^/master {
+        root /var/www/brbt-dev/html;
+        index index.html;
+        try_files $uri $uri/ /master/index.html;
+      }
+
+      location /static/ {
+        alias /var/www/brbt-dev/static/;
+      }
+
+      location /uploads {
+        alias /var/www/brbt-dev/uploads/;
       }
     }
